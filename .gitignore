@@ -31,3 +31,9 @@ node_modules
 
 # Optional REPL history
 .node_repl_history
+
+# custom
+dist/
+app/*.js
+app/*.js.map
+typings/
