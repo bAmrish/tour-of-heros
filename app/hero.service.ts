@@ -1,9 +1,9 @@
 import {Injectable} from 'angular2/core';
-import {HEROS} from './mock-heros';
+import {HEROES} from './mock-heros';
 
 @Injectable() 
 export class HeroService {
     getHeroes() {
-        return HEROS;
+        return Promise.resolve(HEROES);
     }
 }
