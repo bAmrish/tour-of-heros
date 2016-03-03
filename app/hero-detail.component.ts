@@ -15,7 +15,9 @@ import {RouteParams} from 'angular2/router';
                     <input type="text" [(ngModel)]=hero.name placehodler="name"/>
                 </div>
             </div>
-        </div>`
+        </div>
+        <div><a href="#" (click)="goBack()">Go Back</a></div>
+    `
 })
 
 export class HeroDetailComponent implements OnInit{
@@ -31,6 +33,10 @@ export class HeroDetailComponent implements OnInit{
         this._heroService
             .getHero(id)
             .then(hero => this.hero = hero);    
+    }
+
+    goBack() {
+        window.history.back();
     }
 
 }
