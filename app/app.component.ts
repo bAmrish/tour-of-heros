@@ -27,12 +27,7 @@ import {HeroDetailComponent} from './hero-detail.component';
 ])
 @Component({
     selector: 'my-app',
-    template: `
-        <h1>{{title}}</h1>
-        <a href="#" [routerLink]="['Heroes']">Heroes</a>
-        <a href="#" [routerLink]="['Dashboard']">Dashboard</a>
-        <router-outlet></router-outlet>
-    `,
+    templateUrl: 'app/app.component.html',
     directives: [ROUTER_DIRECTIVES],
     providers: [HeroService, ROUTER_PROVIDERS]
 })
