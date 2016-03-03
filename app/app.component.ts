@@ -1,8 +1,11 @@
 import {Component} from 'angular2/core';
-import {HeroesComponent} from './heroes.component';
-import {DashboardComponent} from './dashboard.component';
-import {HeroService} from './hero.service';
 import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
+
+import {HeroService} from './hero.service';
+
+import {DashboardComponent} from './dashboard.component';
+import {HeroesComponent} from './heroes.component';
+import {HeroDetailComponent} from './hero-detail.component';
 
 @RouteConfig([
     {
@@ -15,6 +18,11 @@ import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router'
         path: '/dashboard',
         component: DashboardComponent,
         useAsDefault: true
+    },
+    {
+        name: 'HeroDetail',
+        path: '/detail/:id',
+        component: HeroDetailComponent
     }
 ])
 @Component({
