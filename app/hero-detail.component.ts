@@ -5,19 +5,7 @@ import {RouteParams} from 'angular2/router';
 
 @Component ({
     selector: 'my-hero-detail',
-    template: `
-        <div *ngIf="hero">    
-            <h2>{{hero.name}} details!!</h2>
-            <div> <label for="id">id: </label> {{hero.id}}</div>
-            <div>
-                <label for="name">name</label>
-                <div>
-                    <input type="text" [(ngModel)]=hero.name placehodler="name"/>
-                </div>
-            </div>
-        </div>
-        <div><a href="#" (click)="goBack()">Go Back</a></div>
-    `
+    templateUrl: 'app/hero-detail.component.html'
 })
 
 export class HeroDetailComponent implements OnInit{
