@@ -1,14 +1,30 @@
 import {Component, OnInit} from 'angular2/core';
-import {HeroDetailComponent} from './hero-detail.component';
+import {Router, RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
+
 import {Hero} from './hero';
 import {HeroService} from './hero.service';
-import {Router} from 'angular2/router';
 
+import {HeroDetailComponent} from './hero-detail.component';
+import {HeroesList} from './heroes-list.component';
+
+@RouteConfig([
+    {
+        name: 'HeroesList',
+        path: '/',
+        component: HeroesList,
+        useAsDefault: true
+    },
+    {
+        name: 'HeroDetails',
+        path: '/details/:id',
+        component: HeroDetailComponent        
+    }
+])
 @Component ({
     selector: 'my-heroes',
     templateUrl: 'app/heroes.component.html',
     styleUrls: ['app/heroes.component.css'],
-    directives: [HeroDetailComponent]
+    directives: [HeroDetailComponent, ROUTER_DIRECTIVES]
 })
 export class HeroesComponent implements OnInit{
     public selectedHero: Hero;
@@ -25,10 +41,13 @@ export class HeroesComponent implements OnInit{
 
     onSelect(hero: Hero) {
         this.selectedHero = hero;
+        let link = ['HeroDetails', { id: this.selectedHero.id }];
+        this._router.navigate(link);
+
     }
 
     getDetails() {
-        let link = ['HeroDetail', {id: this.selectedHero.id}];
+        let link = ['HeroDetails', {id: this.selectedHero.id}];
         this._router.navigate(link);
     }
 }

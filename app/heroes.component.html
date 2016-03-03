@@ -5,7 +5,4 @@
         {{hero.name}}
     </li>
 </ul>
-<div *ngIf="selectedHero">
-    <h2>{{selectedHero.name | uppercase}} is my hero!</h2>
-    <button (click)="getDetails()">Get Details</button>
-</div>
+<router-outlet></router-outlet>

@@ -10,7 +10,7 @@ import {HeroDetailComponent} from './hero-detail.component';
 @RouteConfig([
     {
         name: 'Heroes',
-        path: '/heroes',
+        path: '/heroes/...',
         component: HeroesComponent   
     },
     {
